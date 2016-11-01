@@ -4,12 +4,12 @@ machine:
   # ruby:
   #   version: 2.3.1
 
-  # dependencies:
-  #   pre:
-  #     -
+# dependencies:
+#   pre:
+#     -
 
-  deployment:
-    master:
-      branch: master
-      commands:
-        - sh script/deploy.sh
+deployment:
+  master:
+    branch: master
+    commands:
+      - sh script/deploy.sh
