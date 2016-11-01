@@ -9,7 +9,7 @@ machine:
   #     -
 
   deployment:
-    deploy:
+    master:
       branch: master
       commands:
-        - ./script/deploy.sh
+        - sh script/deploy.sh
