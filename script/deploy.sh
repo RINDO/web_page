@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ssh rindo ./deploy_web.sh
+ssh rindo@rindo.me sh deploy_web.sh
