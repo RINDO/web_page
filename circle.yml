@@ -11,6 +11,7 @@ machine:
     version: 6.3.0 
   post:
     - npm install -g npm@3
+    - gem install slim sass
   timezone: Asia/Tokyo
 
 dependencies:
@@ -22,10 +23,10 @@ dependencies:
 test:
   post:
     - gulp
-    - bundle exec htmlproofer htdocs/ --disable-external --alt-ignore '/.*/' --file-ignore /.*vendor\/bundle*/
 
 deployment:
   master:
     branch: master
     commands:
       - sh script/deploy.sh
+      - scp -r . rindo@rindo.me:/html/
