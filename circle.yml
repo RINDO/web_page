@@ -22,4 +22,4 @@ deployment:
   master:
     branch: master
     commands:
-      - scp -rC . rindo@rindo.me:/html/
+      - rsync -ar . rindo@rindo.me:/html/
