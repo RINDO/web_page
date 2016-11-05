@@ -22,5 +22,4 @@ deployment:
   master:
     branch: master
     commands:
-      - sh script/deploy.sh
       - scp -r . rindo@rindo.me:/html/
