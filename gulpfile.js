@@ -21,7 +21,9 @@ gulp.task('slim', function() {
   gulp.src(config.path.slim)
       .pipe(plumber())
       .pipe(slim({
-        pretty: true
+        pretty:  true,
+        require: 'slim/include',
+        options: 'include_dirs=["./src/includes"]'
       }))
       .pipe(gulp.dest(config.out.slim))
 });
