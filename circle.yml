@@ -8,7 +8,7 @@ dependencies:
 
 test:
   post:
-    - bundle exec htmlproofer . --disable-external --alt-ignore '/.*/' --file-ignore /.*vendor\/bundle*/
+    - bundle exec htmlproofer htdocs/ --disable-external --alt-ignore '/.*/' --file-ignore /.*vendor\/bundle*/
 
 deployment:
   master:
