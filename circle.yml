@@ -22,4 +22,4 @@ deployment:
   master:
     branch: master
     commands:
-      - rsync -ar . rindo@rindo.me:/html/
+      - sh script/deploy.sh
