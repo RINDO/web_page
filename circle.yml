@@ -6,11 +6,9 @@ machine:
   post:
     - npm install -g npm@3
     - gem install slim sass
-  timezone: Asia/Tokyo
 
 dependencies:
   override:
-    - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
     - npm install -g gulp
     - npm install
 
