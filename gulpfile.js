@@ -1,7 +1,7 @@
 var gulp    = require("gulp");
 var plumber = require("gulp-plumber");
 var slim    = require("gulp-slim");
-var sass    = require("gulp-sass")
+var sass    = require("gulp-sass");
 
 // config
 var config = {
