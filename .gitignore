@@ -1,1 +1,10 @@
+# ruby gems
 /vendor/bundle
+
+# node modules
+node_modules/
+
+# build output
+htdocs/css
+htdocs/js
+htdocs/*.html
