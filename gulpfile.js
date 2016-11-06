@@ -13,7 +13,7 @@ var config = {
   },
   out : {
     slim : "./htdocs/",
-    sass : "./htdocs/css/"
+    sass : "./htdocs/css/",
     all  : "./htdocs/**"
   }
 }
