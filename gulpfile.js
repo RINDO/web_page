@@ -2,6 +2,7 @@ var gulp    = require("gulp");
 var plumber = require("gulp-plumber");
 var slim    = require("gulp-slim");
 var sass    = require("gulp-sass");
+var browser = require("browser-sync");
 
 // config
 var config = {
@@ -13,8 +14,22 @@ var config = {
   out : {
     slim : "./htdocs/",
     sass : "./htdocs/css/"
+    all  : "./htdocs/**"
   }
 }
+
+// browser-sync
+gulp.task("browser-sync", function() {
+  browser({
+    server: {
+      baseDir: "./htdocs"
+    }
+  });
+});
+
+gulp.task("reload", function() {
+  browser.reload();
+});
 
 // slim 
 gulp.task('slim', function() {
@@ -41,11 +56,15 @@ gulp.task('sass', function() {
 });
 
 gulp.task('sass:watch', ['sass'], function() {
-  gulp.watch(config.path.sass_files, ['sass'])
+  gulp.watch(config.path.sass_files, ['sass']);
+});
+
+gulp.task('html:watch', ['reload'], function() {
+  gulp.watch(config.out.all, ['reload']);
 });
 
 // watch
-gulp.task('watch', ['slim:watch', 'sass:watch']);
+gulp.task('watch', ['browser-sync' ,'slim:watch', 'sass:watch', 'html:watch']);
 
 // task
 gulp.task("default", ["slim", "sass"]);
