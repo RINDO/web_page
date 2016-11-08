@@ -8,3 +8,4 @@ node_modules/
 htdocs/css
 htdocs/js
 htdocs/*.html
+htdocs/includes/*.html
