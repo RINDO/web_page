@@ -3,6 +3,7 @@ var plumber = require("gulp-plumber");
 var slim    = require("gulp-slim");
 var sass    = require("gulp-sass");
 var browser = require("browser-sync");
+var prefix  = require("gulp-autoprefixer")
 
 // config
 var config = {
@@ -52,6 +53,10 @@ gulp.task('sass', function() {
   gulp.src(config.path.target_sass)
       .pipe(plumber())
       .pipe(sass())
+      .pipe(prefix({
+            browsers: ['last 2 version', 'iOS >= 8.1', 'Android >= 4.4'],
+            cascade: false
+        }))
       .pipe(gulp.dest(config.out.sass))
 });
 
