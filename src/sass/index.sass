@@ -5,14 +5,21 @@
   padding-top: 250px
   padding-bottom: 300px
   h1
-    font-size: 14vw
+    font-size: 10.0rem
     font-weight: 700
     letter-spacing: 3px
     color: #74cfae
+
   h2
-    font-size: 4vw
+    font-size: 2.5rem
     color: #c0c0c0
     font-weight: 400
+
+  @include mediaquery-smartphone
+      h1
+        font-size: 6.0rem
+      h2
+        font-size: 1.7rem
 
 /* Green */
 
@@ -21,29 +28,38 @@
   padding-top: 50px
   margin-bottom: 0px
   h2
-    color: white
+    font-size: 5.5rem
     font-weight: 600
-    font-size: 5vw
     padding-bottom: 15px
+    color: white
   span
     color: white
-    font-weight: 600
+    font-weight: 400
     font-size: 2.0rem
-    padding-left: 10px    
+    padding-left: 10px
 
   ul
     list-style-type: none
   li 
     color: white
+    font-size: 1.9rem
     font-weight: 300
   i
     font-weight: 400
     font-size: 4.0rem
     color: white
-  p
-    color: white
-    font-weight: 400
-    font-size: 2.0rem
+
+  @include mediaquery-smartphone
+    h2
+      font-size: 3.5rem
+    li
+      font-size: 1.7rem
+    span
+      font-size: 1.8rem
+    i
+      font-size: 3.0rem
+
+
 
 /* Social Links */
 
@@ -63,7 +79,12 @@
     color: #74cfae
   span
     font-weight: 200
+    font-size: 1.8rem
   ul
     list-style-type: none
   li
     padding: 10px
+
+  @include mediaquery-smartphone
+    span
+      font-size: 1.5rem
