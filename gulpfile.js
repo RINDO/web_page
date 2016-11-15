@@ -1,12 +1,13 @@
-var gulp    = require("gulp");
-var plumber = require("gulp-plumber");
-var slim    = require("gulp-slim");
-var sass    = require("gulp-sass");
-var browser = require("browser-sync");
-var prefix  = require("gulp-autoprefixer")
+const gulp    = require("gulp");
+const plumber = require("gulp-plumber");
+const slim    = require("gulp-slim");
+const sass    = require("gulp-sass");
+const browser = require("browser-sync");
+const prefix  = require("gulp-autoprefixer")
+
 
 // config
-var config = {
+const config = {
   path : {
     slim        : "./src/**/*.slim",
     target_sass : "./src/sass/main.sass",
@@ -20,7 +21,7 @@ var config = {
 }
 
 // browser-sync
-gulp.task("browser-sync", function() {
+gulp.task("browser-sync", () => {
   browser({
     server: {
       baseDir: "./htdocs"
@@ -28,12 +29,12 @@ gulp.task("browser-sync", function() {
   });
 });
 
-gulp.task("reload", function() {
+gulp.task("reload", () => {
   browser.reload();
 });
 
 // slim 
-gulp.task('slim', function() {
+gulp.task('slim', () => {
   gulp.src(config.path.slim)
       .pipe(plumber())
       .pipe(slim({
@@ -44,12 +45,12 @@ gulp.task('slim', function() {
       .pipe(gulp.dest(config.out.slim))
 });
 
-gulp.task('slim:watch', ['slim'], function() {
+gulp.task('slim:watch', ['slim'], () => {
   gulp.watch(config.path.slim, ['slim']);
 });
 
 // sass
-gulp.task('sass', function() {
+gulp.task('sass', () => {
   gulp.src(config.path.target_sass)
       .pipe(plumber())
       .pipe(sass())
@@ -60,11 +61,11 @@ gulp.task('sass', function() {
       .pipe(gulp.dest(config.out.sass))
 });
 
-gulp.task('sass:watch', ['sass'], function() {
+gulp.task('sass:watch', ['sass'], () => {
   gulp.watch(config.path.sass_files, ['sass']);
 });
 
-gulp.task('html:watch', ['reload'], function() {
+gulp.task('html:watch', ['reload'], () => {
   gulp.watch(config.out.all, ['reload']);
 });
 
