@@ -4,19 +4,22 @@ const slim    = require("gulp-slim");
 const sass    = require("gulp-sass");
 const browser = require("browser-sync");
 const prefix  = require("gulp-autoprefixer")
-
+const browserify = require("gulp-browserify");
 
 // config
 const config = {
   path : {
     slim        : "./src/**/*.slim",
     target_sass : "./src/sass/main.scss",
-    sass_files  : "./src/**/*.scss"
+    sass_files  : "./src/**/*.scss",
+    target_js   : "./src/javascript/app.js",
+    javascripts : "./src/javascript/*.js"
   },
   out : {
-    slim : "./htdocs/",
-    sass : "./htdocs/css/",
-    all  : "./htdocs/**"
+    slim : "./html/",
+    sass : "./html/css/",
+    all  : "./html/**",
+    javascript: "./html/js/"
   }
 }
 
@@ -24,13 +27,26 @@ const config = {
 gulp.task("browser-sync", () => {
   browser({
     server: {
-      baseDir: "./htdocs"
+      baseDir: "./html"
     }
   });
 });
 
 gulp.task("reload", () => {
   browser.reload();
+});
+
+// javascript
+gulp.task('browserify', () => {
+  gulp.src(config.path.target_js)
+      .pipe(browserify({
+        insertGlobals: true
+      }))
+      .pipe(gulp.dest(config.out.javascript));
+});
+
+gulp.task('js:watch', ['browserify'], () => {
+  gulp.watch(config.path.javascripts, ['browserify']);
 });
 
 // slim 
@@ -70,7 +86,7 @@ gulp.task('html:watch', ['reload'], () => {
 });
 
 // watch
-gulp.task('watch', ['browser-sync' ,'slim:watch', 'sass:watch', 'html:watch']);
+gulp.task('watch', ['browser-sync' ,'slim:watch', 'sass:watch', 'html:watch', 'js:watch']);
 
 // task
 gulp.task("default", ["slim", "sass"]);

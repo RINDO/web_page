@@ -5,7 +5,7 @@
 node_modules/
 
 # build output
-htdocs/css
-htdocs/js
-htdocs/*.html
-htdocs/includes/*.html
+html/css
+html/js/app.js
+html/*.html
+html/includes/*.html
