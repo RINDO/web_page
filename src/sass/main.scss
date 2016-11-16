@@ -1,0 +1,17 @@
+// $fa-css-prefix: "fa1"
+
+/* CNS CSS */
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
+
+@import "media_query.scss";
+@import "colors.scss";
+@import "fonts.scss";
+
+/* PAGE */
+@import "navbar.scss";
+@import "404.scss";
+@import "50x.scss";
+@import "index.scss";
+@import "common.scss";
+@import "footer.scss";

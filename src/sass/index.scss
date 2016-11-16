@@ -1,0 +1,97 @@
+ul {
+  list-style-type: none;
+}
+
+h2 {
+  font-size: 3.0rem;
+}
+
+#hello {
+  padding-top: 80px;
+  padding-bottom: 100px;
+
+  h1 {
+    font-size: 10.0rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: #c0c0c0;
+  }
+
+  @include mediaquery-smartphone {
+    h1 { font-size: 5.0rem; }
+    h2 { font-size: 1.7rem; }
+  }
+}
+
+#skills {
+  span {
+    font-size: 2.0rem;
+    padding-left: 10px;
+  }
+  li {
+    font-size: 1.9rem;
+    font-weight: 300;
+  }
+  i {
+    font-size: 4.0rem;
+  }
+
+  @include mediaquery-smartphone {
+    h2 { font-size: 3.5rem; }
+    li { font-size: 1.7rem; }
+    span { font-size: 1.8rem; }
+    i { font-size: 3.0rem; }
+  }
+}
+
+#products {
+
+  padding-bottom: 30px;
+
+  .table_mask {
+    overflow-x: auto;
+  }
+
+  .sfc_bus {
+    // background-color: colors(turquoise);
+    background-color: white;
+  }
+
+  img {
+    // for 6s
+    width: 187px;
+  }
+  ul {
+    padding-top: 10px;
+    display: inline-table;
+  }
+  li {
+    display: table-cell;
+    padding-right: 15px;
+  }
+}
+
+#social {
+  h2 {
+    font-size: 3.0rem;
+  }
+  i {
+    font-size: 4.0rem;
+    padding-right: 15px;
+  }
+  span {
+    font-weight: 200;
+    font-size: 1.8rem;
+  }
+  li {
+    padding: 10px;
+  }
+
+  @include mediaquery-smartphone {
+    span { font-size: 1.5rem; }
+  }
+}

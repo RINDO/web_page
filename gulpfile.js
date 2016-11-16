@@ -10,8 +10,8 @@ const prefix  = require("gulp-autoprefixer")
 const config = {
   path : {
     slim        : "./src/**/*.slim",
-    target_sass : "./src/sass/main.sass",
-    sass_files  : "./src/**/*.sass"
+    target_sass : "./src/sass/main.scss",
+    sass_files  : "./src/**/*.scss"
   },
   out : {
     slim : "./htdocs/",

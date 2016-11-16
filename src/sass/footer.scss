@@ -1,0 +1,16 @@
+.footer {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: colors(footer);
+  
+  p {
+    color: white;
+    text-align: right;
+    font-weight: 600;
+    padding-right: 40px;
+  }
+
+  @include mediaquery-smartphone {
+    p { padding-right: 25px; }
+  }
+}

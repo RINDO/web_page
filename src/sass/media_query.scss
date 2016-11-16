@@ -1,0 +1,22 @@
+$width-pc: 940px;
+$width-tablet: 768px;
+$width-smartphone: 480px;
+$width-scrollbar: 20px;
+
+@mixin mediaquery-pc {
+  @media only screen and (min-width: $width-tablet + $width-scrollbar) {
+    @content;
+  }
+}
+
+@mixin mediaquery-tablet {
+  @media only screen and (min-width: $width-smartphone + $width-scrollbar) and (max-width: $width-tablet + $width-scrollbar - 1) {
+    @content;
+  }
+}
+
+@mixin mediaquery-smartphone {
+  @media only screen and (max-width: $width-smartphone + $width-scrollbar - 1) {
+    @content;
+  }
+}

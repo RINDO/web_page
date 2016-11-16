@@ -5,68 +5,82 @@ html
   body
     include navbar
 
-    #hello
-      .container
-        .row
-          .col-lg-8.col-lg-offset-2.centered
-            h1 rindo.me
-            h2 What You See Is What You Get.
+    .card#hello
+      .centered
+        h1 rindo.me
+        h2 What You See Is What You Get.
 
-    #green
-      .container
-        .row.centered
-          h2 Skills
-          .col-xs-12.col-md-6
+    .card#skills
+      .row.centered
+        h2 Skills
+
+        .col-xs-12.col-sm-6.col-md-6.col-lg-3        
+          ul
+            lh
+              i.fa.fa-apple
+              span iOS, WatchOS
+            li Objective-C
+            li Swift
+
+        .col-xs-12.col-sm-6.col-md-6.col-lg-3
+          ul
+            lh
+              i.fa.fa-android
+              span Android
+            li Java
+            li Kotlin
+
+        .col-xs-12.col-sm-6.col-md-6.col-lg-3
+          ul
+            h3
+              i.fa.fa-cloud
+              span Web
+            li Javascript
+            li Ruby
+            li Python
+            li HTML / Slim
+            li CSS / Sass
+
+        .col-xs-12.col-sm-6.col-md-6.col-lg-3
+          ul
+            lh
+              i.fa.fa-comments-o
+              span Communication
+            li Github
+            li Slack
+            li Trello
+            li Basecamp
+
+    .card#products
+      .row.centered
+        h2 Latest Products
+        .pop-card.sfc_bus
+          .table_mask
             ul
-              lh
-                i.fa.fa-apple
-                span iOS, WatchOS
-              li Objective-C
-              li Swift
-
-            ul
-              lh
-                i.fa.fa-android
-                span Android
-              li Java
-              li Kotlin
-          .col-xs-12.col-md-6
-            ul
-              lh
-                i.fa.fa-cloud
-                span Web
-              li Javascript
-              li Ruby
-              li Python
-              li HTML / Slim
-              li CSS / Sass
-
-            ul
-              lh
-                i.fa.fa-comments-o
-                span Communication
-              li Github
-              li Slack
-              li Trello
-              li Basecamp
-
-
-    #social
-      .container
-        .row.centered
-          h2 Social Accounts
-
-          .col-lg-8.col-lg-offset-2
-            ul
+              li 
+                img src="img/products/sfc_bus/1.png"
+              li 
+                img src="img/products/sfc_bus/2.png"
               li
-                i.fa.fa-facebook
-                span rindou.katsura
+                img src="img/products/sfc_bus/3.png"
               li
-                i.fa.fa-twitter
-                span abnormal_Ringo
-              li
-                i.fa.fa-instagram
-                span abnormal_ringo
+                img src="img/products/sfc_bus/4.png"
+
+    .card#social
+      .row.centered
+        h2 Social Accounts
+
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          ul
+            li
+              i.fa.fa-facebook
+              span rindou.katsura
+            li
+              i.fa.fa-twitter
+              span abnormal_Ringo
+            li
+              i.fa.fa-instagram
+              span abnormal_ringo
 
     include footer
 
