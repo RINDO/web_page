@@ -12,10 +12,10 @@ const fs         = require("fs");
 // config
 const config = {
   path : {
-    slim          : "./src/*.slim",
+    slim          : "./src/**/*.slim",
     slim_includes : "./src/includes/",
     target_sass   : "./src/sass/main.scss",
-    sass_files    : "./src/**/*.scss",
+    sass_files    : "./src/sass/**/*.scss",
     target_js     : "./src/javascript/app.js",
     javascripts   : "./src/javascript/*.js"
   },

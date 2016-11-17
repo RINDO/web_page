@@ -30,14 +30,27 @@ h1, h2, h3, h4, h5, h6 {
 /* parts */
 
 .card {
-  width: 95%;
-  margin: 0 auto;
-  margin-bottom: 20px;
   background-color: colors(card);
   box-shadow: 0 2px 5px colors(shadow);
   border-radius: 10px 10px 10px 10px;
+}
+
+.topic-card {
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 20px;
 
   @include mediaquery-smartphone {
     width: 90%;
   }
+}
+
+.jp {
+  font-family: fonts(notosansjapanese), sans-serif;
+}
+
+/* links */
+
+a:link {
+  text-decoration: none;
 }

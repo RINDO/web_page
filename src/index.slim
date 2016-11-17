@@ -6,63 +6,68 @@ html
     include navbar
 
     #hello
-      .centered
+      .row.centered
         h1 rindo.me
         h2 What You See Is What You Get.
 
-    .card#skills
+    #skills.card.topic-card
       .row.centered
         h2 Skills
 
-        .col-xs-12.col-sm-6.col-md-6.col-lg-3        
-          ul
-            lh
+        .col-xs-12.col-sm-6.col-md-6.col-lg-3
+          dl
+            dt
               i.fa.fa-apple
               span iOS, WatchOS
-            li Objective-C
-            li Swift
+
+              dd Objective-C
+              dd Swift
 
         .col-xs-12.col-sm-6.col-md-6.col-lg-3
-          ul
-            lh
+          dl
+            dt
               i.fa.fa-android
               span Android
-            li Java
-            li Kotlin
+
+              dd Java
+              dd Kotlin
 
         .col-xs-12.col-sm-6.col-md-6.col-lg-3
-          ul
-            h3
+          dl
+            dt
               i.fa.fa-cloud
               span Web
-            li Javascript
-            li Ruby
-            li Python
-            li HTML / Slim
-            li CSS / Sass
+
+              dd Javascript
+              dd Ruby
+              dd Python
+              dd HTML / Slim
+              dd CSS / Sass
 
         .col-xs-12.col-sm-6.col-md-6.col-lg-3
-          ul
-            lh
+          dl
+            dt
               i.fa.fa-comments-o
               span Communication
-            li Github
-            li Slack
-            li Trello
-            li Basecamp
 
-    .card#products
+              dd Github
+              dd Slack
+              dd Trello
+              dd Basecamp
+
+    #products.card.topic-card
       .row.centered
-        h2 Latest Products
-        .pop-card.sfc_bus
-          .table_mask
-            ul
-              - 4.times do |i|
-                li
-                  - path = "img/products/sfc_bus/#{i}.png"
-                  <a href="#{path}" data-lity><img src="img/products/sfc_bus/#{i}.png"></a>
+        h2 Latest Product
+        .table_mask
+          ul
+            - 4.times do |i|
+              li
+                - path = "img/products/sfc_bus/#{i}.png"
+                <a href="#{path}" data-lity><img src="img/products/sfc_bus/#{i}.png"></a>
 
-    .card#social
+        a href="products/" more..
+
+    #social.card.topic-card
       .row.centered
         h2 Social Accounts
 

@@ -1,0 +1,42 @@
+.product-card {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .table_mask {
+    overflow-x: auto;
+
+    ul {
+      padding-top: 15px;
+      display: inline-table;
+    }
+    li {
+      display: table-cell;
+      padding-right: 15px;
+    }
+    img {
+      // for 6s
+      width: 187px;
+    }
+  }
+
+  a {
+    font-size: 2.0rem;
+    font-weight: 400;
+    color: colors(blue);
+  }
+
+  p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+  }
+}
+
+.product-link {
+  ul {
+    padding-top: 15px;
+  }
+  a {
+    font-size: 2.5rem;
+  }
+}

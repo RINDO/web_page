@@ -7,7 +7,7 @@ h2 {
 }
 
 #hello {
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 100px;
 
   h1 {
@@ -32,7 +32,7 @@ h2 {
     font-size: 2.0rem;
     padding-left: 10px;
   }
-  li {
+  dd {
     font-size: 1.9rem;
     font-weight: 300;
   }
@@ -42,22 +42,20 @@ h2 {
 
   @include mediaquery-smartphone {
     h2 { font-size: 3.5rem; }
-    li { font-size: 1.7rem; }
+    dd { font-size: 1.7rem; }
     span { font-size: 1.8rem; }
     i { font-size: 3.0rem; }
   }
 }
 
 #products {
-
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 
   .table_mask {
     overflow-x: auto;
   }
 
   .sfc_bus {
-    // background-color: colors(turquoise);
     background-color: white;
   }
 
@@ -72,6 +70,13 @@ h2 {
   li {
     display: table-cell;
     padding-right: 15px;
+  }
+
+  a {
+    padding-top: 20px;
+    font-size: 2.0rem;
+    font-weight: 400;
+    color: colors(blue);
   }
 }
 

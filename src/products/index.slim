@@ -1,0 +1,35 @@
+doctype html
+html
+  include header
+
+  body
+    include navbar
+
+    .row.centered
+      .card.topic-card.product-card
+        h2 SFC Bus bot
+        p.jp 「次のバスは？」「終バスいつ？」などと聞くと、バスの時刻を教えてくれるSFC生向けのLINE botです。
+
+        .table_mask
+          ul
+            - 4.times do |i|
+              li
+                - path = "/img/products/sfc_bus/#{i}.png"
+                <a href="#{path}" data-lity><img src="/img/products/sfc_bus/#{i}.png"></a>
+
+
+      .card.topic-card.product-card
+        h2 centos-texlive-box
+        p.jp 
+          |  研究生の見方TexliveをVagrantboxにして配布しています。Vagrantfileもあるのでカスタムも自由にできます。
+          |  version0.2では冪等性が保たれるようになり、Centos7に対応しました。
+
+        .product-link
+          ul
+            li 
+              a href="https://github.com/RINDO/centos-texlive-box" Github
+            li
+              a href="https://atlas.hashicorp.com/RINDO/boxes/centos-texlive-box/" Vagrant Cloud
+
+
+    include footer
