@@ -9,7 +9,8 @@ const rename     = require("gulp-rename");
 const del        = require("del");
 const fs         = require("fs");
 
-// config
+// consts -------------------------------------------------------------------
+
 const config = {
   path : {
     slim          : "./src/**/*.slim",
@@ -27,7 +28,8 @@ const config = {
   }
 }
 
-// browser-sync
+// tasks --------------------------------------------------------------------
+
 gulp.task("browser-sync", () => {
   browser({
     server: {
@@ -40,7 +42,6 @@ gulp.task("reload", () => {
   browser.reload();
 });
 
-// javascript
 gulp.task('browserify', () => {
   gulp.src(config.path.target_js)
       .pipe(browserify({
@@ -53,7 +54,6 @@ gulp.task('js:watch', () => {
   gulp.watch(config.path.javascripts, ['browserify']);
 });
 
-// slim 
 gulp.task('slim', () => {
   gulp.src(config.path.slim)
       .pipe(plumber())
@@ -69,7 +69,6 @@ gulp.task('slim:watch', () => {
   gulp.watch(config.path.slim, ['slim']);
 });
 
-// sass
 gulp.task('sass', () => {
   gulp.src(config.path.target_sass)
       .pipe(plumber())
@@ -81,32 +80,27 @@ gulp.task('sass', () => {
       .pipe(gulp.dest(config.out.css))
 });
 
-// rename
+gulp.task('sass:watch', () => {
+  gulp.watch(config.path.sass_files, ['sass', 'rename:build', 'slim']);
+});
+
 gulp.task('rename:build', () => {
-  // rename
   del.sync([config.out.css + "main.css?*"]);
 
-  let css = "main.css?" + Date.now();
+  const css = "main.css?" + Date.now();
   gulp.src(config.out.css + "main.css")
       .pipe(rename(css))
       .pipe(gulp.dest(config.out.css));
 
-  let header = config.path.slim_includes + "header.slim";
+  const header = config.path.slim_includes + "header.slim";
   fs.readFile(header, 'utf8', (err, data) => {
     fs.writeFileSync(header, data.replace(/main\.css\?.*/gi, css+'"'), 'utf8');
   });
-});
-
-gulp.task('sass:watch', () => {
-  gulp.watch(config.path.sass_files, ['sass', 'rename:build', 'slim']);
 });
 
 gulp.task('html:watch', () => {
   gulp.watch(config.out.all, ['reload']);
 });
 
-// watch
 gulp.task('watch', ['browser-sync' ,'slim:watch', 'sass:watch', 'html:watch', 'js:watch']);
-
-// task
 gulp.task("default", ["slim", "sass", "rename:build"]);
