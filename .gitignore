@@ -1,10 +1,1 @@
-# ruby gems
-/vendor/bundle
-
-# node modules
 node_modules/
-
-# build output
-html/*
-!html/img
-!html/js
