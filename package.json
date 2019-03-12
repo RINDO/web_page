@@ -6,7 +6,7 @@
   "scripts": {
     "build-pug": "pug src/index.pug -o .",
     "build-scss": "node-sass src/scss/main.scss main.css",
-    "build": "npm run build-pug & npm run build-scss",
+    "build": "npm run build-pug && npm run build-scss",
     "watch-pug": "pug src/index.pug -o . --watch --pretty",
     "watch-scss": "node-sass src/scss/main.scss main.css --watch --output-style compressed",
     "sync": "browser-sync start --server --files \"**/*\"",

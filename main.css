@@ -153,31 +153,3 @@ h2 {
 @media only screen and (max-width: 499px) {
   #social span {
     font-size: 1.5rem; } }
-
-.product-card {
-  padding-top: 10px;
-  padding-bottom: 10px; }
-  .product-card .table_mask {
-    overflow-x: auto; }
-    .product-card .table_mask ul {
-      padding-top: 15px;
-      display: inline-table; }
-    .product-card .table_mask li {
-      display: table-cell;
-      padding-right: 15px; }
-    .product-card .table_mask img {
-      width: 187px; }
-  .product-card a {
-    font-size: 2.0rem;
-    font-weight: 400;
-    color: #2196F3; }
-  .product-card p {
-    width: 90%;
-    margin: 0 auto;
-    font-size: 1.5rem; }
-
-.product-link ul {
-  padding-top: 15px; }
-
-.product-link a {
-  font-size: 2.5rem; }
