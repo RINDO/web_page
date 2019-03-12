@@ -1,11 +1,16 @@
 {
-  "name": "rindo.me",
+  "name": "rindo.github.io",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "gulp watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-pug": "pug src/index.pug -o .",
+    "build-scss": "node-sass src/scss/main.scss main.css",
+    "build": "npm run build-pug & npm run build-scss",
+    "watch-pug": "pug src/index.pug -o . --watch --pretty",
+    "watch-scss": "node-sass src/scss/main.scss main.css --watch --output-style compressed",
+    "sync": "browser-sync start --server --files \"**/*\"",
+    "dev": "concurrently --kill-others \"npm run watch-pug\" \"npm run watch-scss\" \"npm run sync\""
   },
   "repository": {
     "type": "git",
@@ -18,18 +23,11 @@
   },
   "homepage": "https://github.com/RINDO/web_page#readme",
   "devDependencies": {
-    "browser-sync": "^2.17.5",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-browserify": "^0.5.1",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-slim": "^0.3.0"
-  },
-  "dependencies": {
-    "babel-preset-es2017": "^6.16.0"
+    "browser-sync": "^2.26.3",
+    "concurrently": "^4.1.0",
+    "node-sass": "^4.11.0",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "watchify": "^3.11.1"
   }
 }

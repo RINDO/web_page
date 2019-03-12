@@ -10,13 +10,10 @@ html
         h2 SFC Bus bot
         p.jp 「次のバスは？」「終バスいつ？」などと聞くと、バスの時刻を教えてくれるSFC生向けのLINE botです。
 
-        .table_mask
+        .product-link
           ul
-            - 4.times do |i|
-              li
-                - path = "/img/products/sfc_bus/#{i}.png"
-                <a href="#{path}" data-lity><img src="/img/products/sfc_bus/#{i}.png"></a>
-
+            li 
+              a(href="https://github.com/RINDO/sfc_bus_bot") Github
 
       .card.topic-card.product-card
         h2 centos-texlive-box
@@ -27,9 +24,9 @@ html
         .product-link
           ul
             li 
-              a href="https://github.com/RINDO/centos-texlive-box" Github
+              a(href="https://github.com/RINDO/centos-texlive-box") Github
             li
-              a href="https://atlas.hashicorp.com/RINDO/boxes/centos-texlive-box/" Vagrant Cloud
+              a(href="https://atlas.hashicorp.com/RINDO/boxes/centos-texlive-box/") Vagrant Cloud
 
 
-    include footer
+    include includes/footer.pug

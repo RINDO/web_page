@@ -1,13 +1,13 @@
 doctype html
 html
-  include header
+  include includes/header.pug
 
   body
-    include navbar
+    include includes/navbar.pug
 
     #hello
       .row.centered
-        h1 rindo.me
+        h1 RINDO
         h2 What You See Is What You Get.
 
     #skills.card.topic-card
@@ -55,18 +55,6 @@ html
               dd Trello
               dd Basecamp
 
-    #products.card.topic-card
-      .row.centered
-        h2 Latest Product
-        .table_mask
-          ul
-            - 4.times do |i|
-              li
-                - path = "img/products/sfc_bus/#{i}.png"
-                <a href="#{path}" data-lity><img src="img/products/sfc_bus/#{i}.png"></a>
-
-        a href="products/" more..
-
     #social.card.topic-card
       .row.centered
         h2 Social Accounts
@@ -83,6 +71,6 @@ html
               i.fa.fa-instagram
               span abnormal_ringo
 
-    include footer
+    include includes/footer.pug
 
 
